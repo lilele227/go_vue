@@ -1,4 +1,4 @@
-# go_where
+# go_vue
 
 > A Vue.js project
 
