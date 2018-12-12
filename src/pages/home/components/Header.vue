@@ -9,7 +9,7 @@
     <span class="iconfont">&#xe632;</span>
     输入城市/景点/游玩主题
   	</div>
-    <div class="header-right">上海
+    <div class="header-right">{{this.city}}
     	<span class="iconfont arrowDown">&#xe62d;</span>
     </div>
   </div>
@@ -18,7 +18,10 @@
 
 <script>
 export default {
-  name: 'HomeHeader'
+  name: 'HomeHeader',
+  props: {
+  	city: String
+  }
 }
 </script>
 <style lang="stylus">

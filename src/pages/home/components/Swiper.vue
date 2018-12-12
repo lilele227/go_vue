@@ -2,7 +2,7 @@
 <div class="wrapper">
   <swiper :options="swiperOption">
     <!-- slides -->
-    <swiper-slide v-for='item of swiperList' :key = 'item.id'>
+    <swiper-slide v-for='item of list' :key = 'item.id'>
     	<img class="swiper-img" :src="item.imgUrl">
     </swiper-slide>
     <!-- Optional controls -->
@@ -14,22 +14,15 @@
 <script>
 export default {
   name: 'HomeHeader',
+  props: {
+    list: Array
+  },
   data (){
   	return {
   		swiperOption: {
-  			pagination: '.swiper-pagination',
-  			loop: true
-  		},
-  		swiperList: [{
-  			id: '0001',
-  			imgUrl: '//gw.alicdn.com/tfs/TB1Yla5upYqK1RjSZLeXXbXppXa-1125-352.jpg_790x10000Q75.jpg_.webp'
-  		},{
-  			id: '0002',
-  			imgUrl: '//gw.alicdn.com/tfs/TB1Yla5upYqK1RjSZLeXXbXppXa-1125-352.jpg_790x10000Q75.jpg_.webp'
-  		},{
-  			id: '0003',
-  			imgUrl: '//gw.alicdn.com/tfs/TB1Yla5upYqK1RjSZLeXXbXppXa-1125-352.jpg_790x10000Q75.jpg_.webp'
-  		}]
+        pagination: '.swiper-pagination',
+        loop: true
+      }
   	}
   }
 

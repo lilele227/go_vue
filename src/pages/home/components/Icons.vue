@@ -1,70 +1,21 @@
 <template>
-	<div class="icons">
-		<swiper>
-			<swiper-slide v-for='page of pages' :key='index'>
-				<div class="icon" v-for="item of page" :key='item.id'>
-					<div class="icon-img">
-						<img class="icon-imgContent" :src="item.imgUrl">
-					</div>
-					<p class="icon-desc">{{item.desc}}</p>
+	<div class="wrapper">
+		<div class="icons">
+			<div class="icon" v-for="item of list" :key='item.id'>
+				<div class="icon-img">
+					<img class="icon-imgContent" :src="item.imgUrl">
 				</div>
-			</swiper-slide>
-		</swiper>
+				<p class="icon-desc">{{item.desc}}</p>
+			</div>
+		</div>
 	</div>
 </template>
 
 <script>
 export default{
 	name:"HomeIcons",
-	data (){
-		return {
-			iconList: [{
-				id: '0001',
-				imgUrl: 'http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png',
-				desc: '景点门票'
-			},{
-				id: '0002',
-				imgUrl: 'http://img1.qunarzz.com/piao/fusion/1711/df/86cbcfc533330d02.png',
-				desc: '滑雪季'
-			},{
-				id: '0003',
-				imgUrl: 'http://img1.qunarzz.com/piao/fusion/1710/a6/83f636bd75ae6302.png',
-				desc: '泡温泉'
-			},{
-				id: '0004',
-				imgUrl: 'http://img1.qunarzz.com/piao/fusion/1611/35/2640cab202c41b02.png',
-				desc: '动植物园'
-			},{
-				id: '0005',
-				imgUrl: 'http://img1.qunarzz.com/piao/fusion/1711/df/86cbcfc533330d02.png',
-				desc: '滑雪季'
-			},{
-				id: '0006',
-				imgUrl: 'http://img1.qunarzz.com/piao/fusion/1710/a6/83f636bd75ae6302.png',
-				desc: '泡温泉'
-			},{
-				id: '0007',
-				imgUrl: 'http://img1.qunarzz.com/piao/fusion/1611/35/2640cab202c41b02.png',
-				desc: '动植物园'
-			},{
-				id: '0008',
-				imgUrl: 'http://img1.qunarzz.com/piao/fusion/1611/a9/ffc620dbda9b9c02.png',
-				desc: '一日游'
-			}]
-		}
-	},
-	computed: {
-		pages () {
-			const pages = []
-			this.iconList.forEach((item,index) =>{
-				const page = Math.floor(index / 8)
-				if (!pages[page]) {
-						pages[page] = []
-				}
-				pages[page].push(item)
-			})
-			return pages;
-		}
+	props: {
+		list: Array
 	}
 }
 
@@ -72,40 +23,43 @@ export default{
 <style lang='stylus' scoped="true">
 @import '~@/styles/global.styl'
 @import '~@/styles/minxins.styl'
-	.icons >>> .swiper-container
+	.wrapper
+		overflow hidden
 		height 0
-		padding-bottom 50%
-	.icons
-		margin-top .1rem
-		.icon
-			position: relative
-			overflow: hidden
-			width: 25%
-			height: 0
-			float:left
-			padding-bottom: 25%
-			.icon-img
-				position absolute
-				top 0
-				left 0
-				right 0
-				bottom .44rem
-				box-sizing border-box
-				padding .1rem
-				.icon-imgContent{
-					display block
-					margin 0 auto
-					height 100%
-				}
-			.icon-desc
-				position absolute
-				left 0
-				right 0
-				bottom 0
-				height .44rem
-				text-align center
-				line-height .44rem
-				color $textColor
-				ellipsis()
+		width 100%
+		padding-bottom 51%
+		.icons
+			margin-top .1rem
+			height 3.9rem
+			.icon
+				position: relative
+				overflow: hidden
+				width: 25%
+				height: 0
+				float:left
+				padding-bottom: 25%
+				.icon-img
+					position absolute
+					top 0
+					left 0
+					right 0
+					bottom .44rem
+					box-sizing border-box
+					padding .1rem
+					.icon-imgContent{
+						display block
+						margin 0 auto
+						height 100%
+					}
+				.icon-desc
+					position absolute
+					left 0
+					right 0
+					bottom 0
+					height .44rem
+					text-align center
+					line-height .44rem
+					color $textColor
+					ellipsis()
 
 </style>
