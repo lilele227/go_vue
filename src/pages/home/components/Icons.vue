@@ -20,7 +20,7 @@ export default{
 }
 
 </script>
-<style lang='stylus' scoped="true">
+<style lang='stylus' scoped>
 @import '~@/styles/global.styl'
 @import '~@/styles/minxins.styl'
 	.wrapper

@@ -25,7 +25,7 @@ export default {
 
 </script>
 
-<style lang="stylus" scoped="true">
+<style lang="stylus" scoped>
 @import '~@/styles/minxins.styl'
 	.title
 		line-height .8rem

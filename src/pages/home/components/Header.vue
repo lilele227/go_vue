@@ -9,9 +9,11 @@
     <span class="iconfont">&#xe632;</span>
     输入城市/景点/游玩主题
   	</div>
-    <div class="header-right">{{this.city}}
-    	<span class="iconfont arrowDown">&#xe62d;</span>
-    </div>
+  	<router-link to="/city">
+	    <div class="header-right">{{this.city}}
+	    	<span class="iconfont arrowDown">&#xe62d;</span>
+	    </div>
+    </router-link>
   </div>
 
 </template>
@@ -24,7 +26,7 @@ export default {
   }
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
 @import '~@/styles/global.styl'
 	.header
 		background: $bgColor
@@ -33,7 +35,6 @@ export default {
 		color:#fff
 		.header-left
 			width: .64rem
-			float: left
 			.backIcon
 				text-align: center
 				font-size: .4rem
@@ -49,9 +50,9 @@ export default {
 			color: #ccc
 			
 		.header-right
+			color: #fff
 			text-align: center
 			width:1.24rem
-			float: right
 			.arrowDown
 				margin-left: -.04rem
 				font-size: .24rem
