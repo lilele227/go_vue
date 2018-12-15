@@ -46,7 +46,6 @@ export default {
       if(this.letter){
         const areaIndex = this.letter.charCodeAt()-65
         const element = this.$refs[areaIndex][0]
-        // console.log(this.scroll)
         this.scroll.scrollToElement(element)
       }
       
