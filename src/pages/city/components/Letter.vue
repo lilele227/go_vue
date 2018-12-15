@@ -1,6 +1,6 @@
 <template>
   <ul class="list">
-    <li class="item" v-for='item in cityList'>
+    <li class="item" v-for='item in cityList' @click='letterClick'>
     {{item.initial}}
     </li>
   </ul>
@@ -11,8 +11,13 @@ export default {
   name: 'CityLetter',
   props: {
     cityList: Array
+    },
+  methods: {
+    letterClick (e) {
+      this.$emit('change',e.target.innerText)
     }
   }
+}
 </script>
 
 <style lang="stylus" scoped>

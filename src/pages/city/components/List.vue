@@ -17,10 +17,10 @@
           </div>
         </div>
       </div>
-      <div class="area" v-for='item,index in cityList' :key='index'>
+      <div class="area" id="area" v-for='item,key in cityList' :key='key' :ref='key'>
         <div class="title border-topbottom">{{item.initial}}</div>
         <div class="item-list">
-          <div class="item border-bottom" v-for='city,cindex in cityList[index].list' :key='cindex'>{{city.name}}</div>
+          <div class="item border-bottom" v-for='city,cindex in cityList[key].list' :key='cindex'>{{city.name}}</div>
         </div>
       </div>
     </div>
@@ -28,17 +28,29 @@
 </template>
 
 <script>
-import BScroll from 'better-scroll'
+import Bscroll from 'better-scroll'
 export default {
   name: 'CityList',
   props:{
     city: String,
     hotcity: Array,
-    cityList: Array
+    cityList: Array,
+    letter: String
 
   },
   mounted () {
-  	scroll = new BScroll('.list')
+  	this.scroll = new Bscroll(this.$refs.wrapper)
+  },
+  watch: {
+    letter () {
+      if(this.letter){
+        const areaIndex = this.letter.charCodeAt()-65
+        const element = this.$refs[areaIndex][0]
+        // console.log(this.scroll)
+        this.scroll.scrollToElement(element)
+      }
+      
+    }
   }
 }
 </script>

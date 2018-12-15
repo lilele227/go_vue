@@ -2,8 +2,8 @@
 	<div>
 		<city-header></city-header>
  		<city-search></city-search>
- 		<city-list :city='citynow' :hotcity='hotcity' :cityList='cityList'></city-list>
- 		<city-letter :cityList='cityList'></city-letter>
+ 		<city-list :city='citynow' :hotcity='hotcity' :cityList='cityList' :letter='letter'></city-list>
+ 		<city-letter :cityList='cityList' @change='letterChange'></city-letter>
 	</div>
 
 
@@ -27,7 +27,8 @@ export default {
   	return {
   		citynow: '',
   		hotcity:[],
-  		cityList:[]
+  		cityList:[],
+  		letter: ''
   	}
   },
   methods: {
@@ -41,9 +42,10 @@ export default {
   			this.citynow = res.citynow
   			this.hotcity = res.hotcity
   			this.cityList = res.cityList
-  			console.log(this.cityList[0].list)
-
   		}
+  	},
+  	letterChange (res) {
+  		this.letter = res
   	}
   },
   mounted () {
