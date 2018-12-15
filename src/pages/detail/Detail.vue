@@ -1,16 +1,14 @@
-<!-- 主页大页面，components为组件 -->
-
 <template>
-  <detail-content></detail-content>
+  <detail-banner></detail-banner>
 
 </template>
 
 <script>
-import DetailContent from './components/Content'
+import DetailBanner from './components/Banner'
 export default {
   name: 'Detail',
   components: {
-  	DetailContent
+  	DetailBanner
   }
 }
 </script>
