@@ -48,7 +48,7 @@ export default {
         const startY = this.$refs['A'][0].offsetTop
         const endY = e.changedTouches[0].clientY - 79
         const touchRange = endY-startY
-        const index = Math.floor(touchRange/19)
+        const index = Math.floor(touchRange/20)
         if(index >= 0 && index < this.letters.length){
           this.$emit('change',this.letters[index])
         }
