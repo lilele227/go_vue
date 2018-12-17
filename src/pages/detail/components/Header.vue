@@ -62,6 +62,7 @@ export default {
 			font-size: .4rem
 	.headerFix
 		position fixed
+		z-index: 9
 		left 0
 		top 0
 		right 0

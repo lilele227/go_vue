@@ -37,6 +37,7 @@ export default {
   	},
   	getCityInfoSucc(res){
   		res = res.data
+      // console.log(res)
   		if(res.ret && res.data){
   			res = res.data
   			this.citynow = res.citynow
