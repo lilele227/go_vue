@@ -17,11 +17,12 @@ export default {
   props: {
     list: Array
   },
-  data (){
+  data () {
   	return {
   		swiperOption: {
         pagination: '.swiper-pagination',
-        loop: true
+        loop: true,
+        autoplay: 2000
       }
   	}
   }
