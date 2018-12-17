@@ -2,7 +2,6 @@
 	<div>
 	  <div class="banner" @click='BannerClick'>
 	  	<img class="banner-img" src="//img1.qunarzz.com/wugc/p102/201301/13/20805c2d8250fd1b93835fbb.jpg_600x330_a55ba2ef.jpg">
-	  	<router-link tag='span' to='/' class="banner-back iconfont">&#xe624;</router-link>
 	  	<div class="banner-info">
 	  		<div class="banner-number">
 	  			<span class="banner-icon iconfont">&#xe604;</span>
@@ -51,11 +50,6 @@ export default {
     padding-bottom: 55%
     .banner-img
       width: 100%
-    .banner-back
-    	position: absolute
-    	left: .2rem
-    	top: .2rem
-    	color: #fff
     .banner-info
       display: flex
       flex-direction: column
