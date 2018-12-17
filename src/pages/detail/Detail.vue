@@ -41,7 +41,7 @@ export default {
   			this.bannerImg = data.bannerImg
   			this.GallaryImgs = data.GallaryImgs
   			this.categoryList = data.categoryList
-  			console.log(this.sightName,this.bannerImg,this.GallaryImgs,this.categoryList)
+  			// console.log(this.sightName,this.bannerImg,this.GallaryImgs,this.categoryList)
   			
   		}
   	}
